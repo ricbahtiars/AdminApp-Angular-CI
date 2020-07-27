@@ -1,0 +1,24 @@
+<div class="container">
+    <button class="btn-tambah" mat-raised-button color="primary" (click)="buatKegiatan()">Add Client</button>
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Klien</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let item of admin">
+            <img matListAvatar src="assets/k.png" alt="...">
+            <h3 matLine> {{item.nama_klien}} </h3>
+            <p matLine>
+              <span> {{item.keterangan}} </span>
+            </p>
+            <p matLine>
+              <span>Date : {{item.jadwal}}</span>
+            </p>
+            <button class="btn-edit" mat-raised-button color="accent"(click)="editAdmin(item)">Edit</button>
+            <button class="btn-selesai" mat-raised-button color="warn"(click)="hapusAdmin(item.id)">Done</button>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
